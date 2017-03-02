@@ -28,7 +28,7 @@ See LICENSE for details.
   border-bottom-color: orange;
 }
 
-.unburnt {
+#unburnt {
   float: left;
   margin-top: 50px;
   height: 10px;
@@ -36,7 +36,7 @@ See LICENSE for details.
   background-color: black;
 }
 
-.burnt {
+#burnt {
   float: left;
   margin-top: 50px;
   height: 10px;
@@ -52,12 +52,13 @@ See LICENSE for details.
   border: 1px black solid;
 }
 
-.crawler {
+#crawler {
   background-image: url("http://i.imgur.com/BEv1kUg.png");
   background-position: center;
   background-size: 100%;
   height: 40px;
   width: 40px;
+  margin-left: 0%;
 
   -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
   -ms-transform: rotate(90deg);     /* IE 9 */
