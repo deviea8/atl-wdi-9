@@ -45,11 +45,13 @@ const CounterCollection = {
   }
 };
 
+var counterDiv = $( "<div class='counter' id='countMe' data-index='2'><h3 id='countNumArea'>Count: <span id='countNum'>0</span></h3><button class='increment btn btn-default'> + 1 </button><button class='deleteMe btn btn-default'> Delete </button></div>" );
+
 // UI //
 const Presenter = {
   insertCounterComponent: function(newCountId){
     console.log(`insert counter component #${newCountId}`);
-    // Your Code Here
+    $('#counterArea').append(counterDiv);
   },
   refreshCounterComponent: function(countId){
     console.log(`refresh counter component #${countId}`);
@@ -61,16 +63,27 @@ const Presenter = {
   }
 };
 
+var clickCounter = 0;
+
 // Top-Level Application Control //
 const AppController = {
   onClickNewCounter: function(event){
-    // Your Code Here
+    var newCounter = Presenter.insertCounterComponent;
+    $('.component').append(newCounter);
+    $('button.increment').click(function() {
+      AppController.onClickIncrement();
+    })
+    $('button.deleteMe').click(function() {
+      AppController.onClickDelete();
+    })
   },
   onClickIncrement: function(event){
-    // Your Code Here
+    clickCounter += 1;
+    $('#countNum').text(clickCounter);
+
   },
-  onClickDelete: function(event){                           // REACH
-    // Your Code Here
+  onClickDelete: function(event){
+    $('#countMe').remove()
   }
 };
 
