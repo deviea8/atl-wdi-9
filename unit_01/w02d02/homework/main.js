@@ -18,6 +18,7 @@ window.onload = function(){
   countDown();
 };
 
+var ladyBug = document.getElementsByClassName("crawler");
 
 var timerUI = {
   drawNumericDisplay: function(timerValue){
@@ -27,11 +28,18 @@ var timerUI = {
     document.getElementsByClassName("progress-bar")[0].style.width = (100 - timerValue + '%');
   },
   drawLitFuses: function(timerValue){
-    document.getElementById("unburnt").style.width = ((98 - (100-timerValue)) + '%');
+    var unburntPart = document.getElementById("unburnt");
+    unburntPart.style.width = ((98 - (100-timerValue)) + '%');
+    document.getElementById("burnt").style.width = ((100 - timerValue) + '%');
   },
   drawCrawlers: function(timerValue){
     if (timerValue >= 4) {
-    document.getElementById("crawler").style.marginLeft = (100 - timerValue + '%');
+    ladyBug[0].style.marginLeft = ((100 - timerValue) * 10) + 'px';
+    if (timerValue % 2 === 0) {
+      ladyBug[0].style.marginTop = "10px";
+    } else {
+      ladyBug[0].style.marginTop = "0px";
+    }
   }
 }
 };

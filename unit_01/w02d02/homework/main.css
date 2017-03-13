@@ -52,13 +52,15 @@ See LICENSE for details.
   border: 1px black solid;
 }
 
-#crawler {
+.crawler {
   background-image: url("http://i.imgur.com/BEv1kUg.png");
   background-position: center;
   background-size: 100%;
   height: 40px;
   width: 40px;
   margin-left: 0%;
+  margin-top: 0%;
+  margin-bottom: 0%;
 
   -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
   -ms-transform: rotate(90deg);     /* IE 9 */
