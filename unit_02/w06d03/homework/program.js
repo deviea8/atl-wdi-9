@@ -1,4 +1,24 @@
-// start level: HELLO WORLD
+// // start level: HELLO WORLD
+
+// // packages
+// var express = require('express');
+
+// // app settings
+// var app = express();
+// var port = process.env.PORT || process.argv[2];
+
+// // homepage
+// app.get ('/home', function (req, res) {
+//   res.send('Hello World!');
+// });
+
+// // start server
+// app.listen(port, function() {
+//   console.log('ready');
+// })
+
+
+// start level: STATIC
 
 // packages
 var express = require('express');
@@ -7,12 +27,11 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || process.argv[2];
 
-// homepage
-app.get ('/home', function (req, res) {
-  res.send('Hello World!');
-});
+app.use(express.static(process.argv[3] || path.join(__dirname, 'public')))
 
 // start server
 app.listen(port, function() {
   console.log('ready');
 })
+
+
