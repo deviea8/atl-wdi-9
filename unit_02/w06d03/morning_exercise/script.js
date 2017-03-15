@@ -14,7 +14,10 @@ return largeBarrel;
 // Sailing the Seas
 
 var shipFuelCost = function(fuelPrice, milesPerGallon){
-  //your code here
+  var earthCir = 24901;
+  var numGalToTravelAroundEarth = earthCir / milesPerGallon;
+  var cost = numGalToTravelAroundEarth * fuelPrice;
+  return cost;
 };
 
 //*************************
@@ -22,7 +25,9 @@ var shipFuelCost = function(fuelPrice, milesPerGallon){
 // GROG
 
 var calcFruitJuice = function(a, b, c, d){
-  //your code here
+  var totalPureFruitJuice = (a * b) + (c * d);
+  var totalJuice = a + c;
+  return (totalPureFruitJuice / totalJuice)/100;
 };
 
 //DO NOT EDIT BELOW THIS LINE//
