@@ -1,13 +1,14 @@
 //packages
 var express = require('express');
 var hbs = require('hbs');
-var bodyParser = require('body-parser');
+var bodyParser = require('body-parser')
 
 //app settings
 var app = express();
 var port = process.env.PORT || 3000;
 
 //app params
+app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'hbs');
 app.use(bodyParser.urlencoded({
   extended: false

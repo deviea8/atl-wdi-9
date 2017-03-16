@@ -1,0 +1,31 @@
+body {
+  font-family: Arial;
+  background: url('http://wallpapercave.com/wp/epnPMk0.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  color: white
+}
+
+a {
+  color: white;
+}
+
+a:visited {
+  color: turquoise;
+}
+
+input {
+  background: turquoise;
+  font-size: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  list-style-type: none
+}
