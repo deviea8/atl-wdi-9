@@ -1,4 +1,5 @@
 <h1>List of Pirates</h1>
+<h2>You have {{pirateName.length}} pirates on your list.</h2>
 <ul class="pirates_list">
   {{#each pirateName}}
     <li><a href="/pirates/{{@index}}">{{name}}</a></li>
@@ -6,5 +7,7 @@
 </ul>
 
 <div>
-  <input type='submit' value="Add New Pirate">
+  <form action="/pirates/new">
+    <input type="submit" value="Add a New Pirate"/>
+  </form>
 </div>

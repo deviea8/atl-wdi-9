@@ -11,11 +11,19 @@ router.get('/', function(req,res) {
 });
 
 router.get('/new', function(req,res) {
-  res.send('this is the new page');
+  res.render('new');
 });
 
-router.get('/post', function(req,res) {
-  res.send('this is the create page');
+router.post('/', function(req,res) {
+  var newPirate = {
+    name: req.body.name,
+    birthplace: req.body.birthplace,
+    death_year: req.body.death_year,
+    base: req.body.base,
+    nickname: req.body.nickname
+  };
+  pirates.push(newPirate);
+  res.redirect('/pirates');
 });
 
 
