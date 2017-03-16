@@ -1,0 +1,12 @@
+
+<h1>You have {{recipe.length}} recipes</h1>
+<ul>
+  {{#each recipe}}
+    <li>
+      {{title}}
+      <br>
+      Vegetarian?: {{veggie}}
+      <img src = "{{imageUrl}}" alt="{{title}}" class="recipe-image">
+    </li>
+  {{/each}}
+</ul>

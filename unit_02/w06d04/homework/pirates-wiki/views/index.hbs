@@ -1,0 +1,10 @@
+<h1>List of Pirates</h1>
+<ul class="pirates_list">
+  {{#each pirateName}}
+    <li><a href="/pirates/{{@index}}">{{name}}</a></li>
+  {{/each}}
+</ul>
+
+<div>
+  <input type='submit' value="Add New Pirate">
+</div>

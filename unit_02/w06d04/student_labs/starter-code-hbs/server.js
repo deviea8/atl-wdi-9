@@ -4,11 +4,13 @@ var logger      = require('morgan');
 var express     = require('express');
 var hbs         = require('hbs');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
 /* app settings*/
 var app         = express();
 var port        = process.env.PORT || 3000;
 /* set up the application params*/
+app.use(methodOverride('_method'));
 
 app.use(bodyParser.urlencoded({
     extended: true

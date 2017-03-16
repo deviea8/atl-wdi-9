@@ -1,5 +1,5 @@
 {
-  "name": "pirates_crud_part_one_solution",
+  "name": "recipe-app",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -12,7 +12,6 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
-    "hbs": "^2.9.0",
-    "morgan": "^1.6.1"
+    "hbs": "^4.0.1"
   }
 }
