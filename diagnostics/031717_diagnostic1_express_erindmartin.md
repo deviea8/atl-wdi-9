@@ -38,9 +38,11 @@ It would be overriding the POST method using method-override and instead cause t
 
 ### Question 7: Write an express route that handles a POST request to the url `/menus` and redirects to the `/homepage`
 
+```
 app.post('/menus', function(req, res) {
     res.redirect('/homepage');
 });
+```
 
 ### Question 8: In the following express route, write how you would grab the values of `:id` and `:song_id` in javascript.
 
