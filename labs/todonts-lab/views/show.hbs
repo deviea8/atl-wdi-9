@@ -1,0 +1,9 @@
+<h1>{{todonts.description}}</h1>
+<div class="urgency">Urgent: {{todonts.urgent}}</div>
+
+<a href="/todonts/{{id}}/edit"><button class="edit-button" type="button">Edit</button></a>
+
+<form action="/todonts/{{id}}?_method=DELETE" method="POST">
+<input class="delete-button" type="submit" value="Delete">
+</form>
+<a href="/todonts">Back to To-Don'ts List</a>
