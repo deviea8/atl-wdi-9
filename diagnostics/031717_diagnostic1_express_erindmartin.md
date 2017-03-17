@@ -50,9 +50,10 @@ app.get("/artist/:id/song/:song_id"), function(req, res){
 }
 ```
 
+```
 var id = req.params.id;
 var songId = req.params.song_id;
-
+```
 
 ### Question 9: What is MVC? How have we been using it so far?
 MVC (method-view-controller) is a way to break up parts of your code into functional, usable groups in separate files known as methods, views, and controllers. We've been using it to dry up our code and make server.js the primary config file, while "relegating" specific code to separate files and requiring them as needed in the app.
@@ -61,6 +62,8 @@ MVC (method-view-controller) is a way to break up parts of your code into functi
 
 ### Question 10: Write an express route that handles a GET request to the url `/products` and sends back the JSON object {error: "Bad Request"}
 
+```
 app.get('/products', function(req, res) {
     res.json({error: "Bad Request"});
 });
+```
