@@ -1,26 +1,23 @@
-//***************************
-// REQUIREMENTS
-//***************************
-// Set up your express dependencies here:
+//packages
+var express = require('express');
+var hbs = require('hbs');
 
+//middleware
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 
+//app settings
+var app = express();
+var port = process.env.PORT || 3000;
 
-//***************************
-// MIDDLEWARE
-//***************************
-//set up your middleware and view engine here
+//app params
+app.set('view engine', 'hbs');
 
+//controllers
+var pokemonController = require('./controllers/pokemon.js');
+app.use('/pokemon', pokemonController);
 
-//***************************
-// CONTROLLERS
-//***************************
-//set up your controller for the `/pokemon` resource
-//ex: var pokemonController = require('???')
-
-
-
-
-//***************************
-// LISTENER
-//***************************
-// Add a listener for port 3000:
+//start server
+app.listen(port, function() {
+  console.info('server ready');
+});

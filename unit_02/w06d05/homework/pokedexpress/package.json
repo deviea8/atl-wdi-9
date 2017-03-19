@@ -1,7 +1,7 @@
 {
   "name": "pokedexpress",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Express app for Pokemon data",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,6 +10,9 @@
   "author": "Christine Yi, adapted from Thom Page",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "hbs": "^4.0.1",
+    "method-override": "^2.3.7"
   }
 }

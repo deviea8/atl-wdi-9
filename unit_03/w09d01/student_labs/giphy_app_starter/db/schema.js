@@ -14,7 +14,7 @@ GifSchema.pre('save', function(next) {
   this.updated_at = now;
 
   if (!this.created_at) { this.created_at = now }
-  
+
   next()
 });
 

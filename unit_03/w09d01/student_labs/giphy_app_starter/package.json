@@ -1,17 +1,21 @@
 {
   "name": "giphy_app",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "Colin Hart",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.16.0",
-    "express": "^4.14.0",
-    "mongoose": "^4.7.7",
-    "morgan": "^1.7.0"
-  }
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "jQuery": "^1.7.4",
+    "mongo-express": "^0.38.0",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.0",
+    "morgan": "^1.8.1"
+  },
+  "description": ""
 }
