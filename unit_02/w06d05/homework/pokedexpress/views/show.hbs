@@ -11,4 +11,8 @@
   <li>{{@key}}: {{this}}</li>
 {{/each}}
 
+<form action="/pokemon/index/{{id}}?_method=DELETE" method="POST">
+  <input class="delete-button" type="submit" value="Delete">
+</form>
+
 <a href="/pokemon">Back to List of Pokemon</a>

@@ -1,36 +1,21 @@
-//***************************
-// REQUIREMENTS
-//***************************
-// Set up your express dependency here:
-
 //dependencies
 var express = require('express');
 var router = express.Router();
 var data = require('../models/poke_array.js');
 
-
+//index page
 router.get('/', function(req, res) {
   res.render('index', {
     pokemon: data
   });
 });
 
-router.get('/index/:id', function(req, res) {
-  res.render('show', {
-    pokeName: data[req.params.id].name,
-    pokeImg: data[req.params.id].img,
-    pokeType: data[req.params.id].type,
-    pokeStats: data[req.params.id].stats,
-  });
-});
-
-
-//render form to add new
+//render form to add new pokemon
 router.get('/new', function(req, res) {
   res.render('new');
 });
 
-//create
+//create new pokemon
 router.post('/', function(req, res) {
   var newPokemon = {
     name: req.body.name,
@@ -49,6 +34,22 @@ router.post('/', function(req, res) {
   res.redirect('/pokemon');
 });
 
+//individual pokemon details page
+router.get('/index/:id', function(req, res) {
+  res.render('show', {
+    pokeName: data[req.params.id].name,
+    pokeImg: data[req.params.id].img,
+    pokeType: data[req.params.id].type,
+    pokeStats: data[req.params.id].stats,
+    id: req.params.id
+  });
+});
+
+//delete
+router.delete('/index/:id', function(req, res){
+  data.splice(req.params.id, 1);
+  res.redirect('/pokemon');
+});
 
 
 //***************************
