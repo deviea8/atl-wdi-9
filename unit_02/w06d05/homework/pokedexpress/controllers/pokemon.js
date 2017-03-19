@@ -24,7 +24,14 @@ router.get('/', function(req, res) {
 
 // Make a GET route '/index/:index' that will render the Pokemon's show page at that :index
 router.get('/index/:id', function(req, res) {
-  res.send('pokemon individual show page');
+  res.render('show', {
+    pokeName: data[req.params.id].name,
+    pokeImg: data[req.params.id].img,
+    pokeType: data[req.params.id].type,
+    pokeStats: data[req.params.id].stats,
+    pokeStatsHp: data[req.params.id].stats.hp,
+    pokeStatsAttack: data[req.params.id].stats.attack
+  });
 });
 
 
@@ -37,6 +44,7 @@ router.get('/index/:id', function(req, res) {
 router.get('/new', function(req, res) {
   res.send('new page');
 });
+
 
 
 
