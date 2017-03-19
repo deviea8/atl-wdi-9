@@ -1,18 +1,23 @@
-<h1>{{pokeName}}</h1>
-<img src={{pokeImg}}>
+<div class="pokemon-card">
+<h1 class="pokemon-name">{{pokeName}}</h1>
+<img class="featured-image" src={{pokeImg}}>
 
 <h2>Type</h2>
 {{#each pokeType}}
-  <li>{{this}}</li>
+  <li class="pokemon-type">{{this}}</li>
 {{/each}}
 
 <h2>Stats</h2>
 {{#each pokeStats}}
-  <li>{{@key}}: {{this}}</li>
+  <li class="pokemon-stats">{{@key}}: {{this}}</li>
 {{/each}}
 
 <form action="/pokemon/index/{{id}}?_method=DELETE" method="POST">
-  <input class="delete-button" type="submit" value="Delete">
+  <input class="delete-button btn btn-danger" type="submit" value="Delete">
 </form>
 
-<a href="/pokemon">Back to List of Pokemon</a>
+<a href="/pokemon/index/{{id}}/edit"><button class="edit-button btn btn-primary">Edit</button></a>
+
+<div class="back-to-list"><a href="/pokemon">Back to List of Pokémon</a>
+
+</div>
