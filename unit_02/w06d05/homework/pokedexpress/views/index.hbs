@@ -2,7 +2,10 @@
 <h2>There are {{pokemon.length}} Pokemon</h2>
 <ol>
 {{#each pokemon}}
-  <li><a href="/pokemon/index/{{@index}}">{{name}}</a></li>
+  <li>
+    <a href="/pokemon/index/{{@index}}">{{name}}
+    <img src={{img}}></a>
+  </li>
 {{/each}}
 </ol>
 

@@ -9,20 +9,12 @@ var router = express.Router();
 var data = require('../models/poke_array.js');
 
 
-//***************************
-// READ
-//***************************
-// Note: All the routes below can be accessed at `localhost:3000/pokemon` + `resource`
-// Make a GET route '/' that will render an index page of all pokemon images
 router.get('/', function(req, res) {
   res.render('index', {
     pokemon: data
   });
 });
 
-
-
-// Make a GET route '/index/:index' that will render the Pokemon's show page at that :index
 router.get('/index/:id', function(req, res) {
   res.render('show', {
     pokeName: data[req.params.id].name,
@@ -33,13 +25,12 @@ router.get('/index/:id', function(req, res) {
 });
 
 
-// Example: a user goes to 'localhost:3000/pokemon/index/0' in the browser and data for Bulbasaur (the pokemon at index 0) will be displayed.
-
-// Make a GET route '/new' that will simply render a form to create a new Pokemon
+//render form to add new
 router.get('/new', function(req, res) {
   res.render('new');
 });
 
+//create
 router.post('/', function(req, res) {
   var newPokemon = {
     name: req.body.name,
@@ -58,15 +49,6 @@ router.post('/', function(req, res) {
   res.redirect('/pokemon');
 });
 
-
-
-
-
-
-//***************************
-// CREATE
-//***************************
-//make a POST route '/' to create a New Pokemon
 
 
 //***************************
