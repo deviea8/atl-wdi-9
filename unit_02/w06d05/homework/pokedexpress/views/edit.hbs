@@ -1,0 +1,46 @@
+<h1>Edit {{pokeName}} Information</h1>
+
+<form action="/pokemon/index/{{id}}?_method=PUT" method="POST">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" name="name" value={{pokemon.name}}>
+  </div>
+  <div>
+    <label for="type">Type</label>
+    <input type="text" name="type" value={{pokemon.type}}>
+  </div>
+  <div>
+    <label for="hp">HPs</label>
+    <input type="number" name="hp" value={{pokemon.stats.hp}}>
+  </div>
+  <div>
+    <label for="attack">Attacks</label>
+    <input type="number" name="attack" value={{pokemon.stats.attack}}>
+  </div>
+  <div>
+    <label for="defense">Defenses</label>
+    <input type="number" name="defense" value={{pokemon.stats.defense}}>
+  </div>
+  <div>
+    <label for="spattack">Spattacks</label>
+    <input type="number" name="spattack" value={{pokemon.stats.spattack}}>
+  </div>
+  <div>
+    <label for="spdefense">Spdefenses</label>
+    <input type="number" name="spdefense" value={{pokemon.stats.spdefense}}>
+  </div>
+  <div>
+    <label for="speed">Speed</label>
+    <input type="number" name="speed" value={{pokemon.stats.speed}}>
+  </div>
+  <div>
+    <label for="img">Image URL</label>
+    <input type="text" name="img" value={{pokemon.img}}>
+  </div>
+
+<div>
+  <input type="submit" value="Submit Change">
+</div>
+
+</form>
+

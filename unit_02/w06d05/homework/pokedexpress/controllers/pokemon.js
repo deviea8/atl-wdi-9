@@ -45,25 +45,37 @@ router.get('/index/:id', function(req, res) {
   });
 });
 
+router.get('/index/:id/edit', function(req, res) {
+  res.render('edit', {
+    pokemon: data[req.params.id],
+    pokeName: data[req.params.id].name,
+    id: req.params.id
+  });
+});
+
 //delete
 router.delete('/index/:id', function(req, res){
   data.splice(req.params.id, 1);
   res.redirect('/pokemon');
 });
 
+//update
+router.put('/index/:id', function(req, res){
+  var pokemonToEdit = data[req.params.id];
+  pokemonToEdit.name = req.body.name;
+  pokemonToEdit.type = [req.body.type];
+  pokemonToEdit.stats = {
+      hp: req.body.hp,
+      attack: req.body.attack,
+      defense: req.body.defense,
+      spattack: req.body.spattack,
+      spdefense: req.body.spdefense,
+      speed: req.body.speed
+    };
+  id: req.params.id;
+  res.redirect('/pokemon/');
+});
 
-//***************************
-// UPDATE
-//***************************
 
-//***************************
-// DELETE
-//***************************
-//make a DELETE route '/:index' that will delete the Pokemon at this index.
-
-
-
-//***************************
-// EXPORTS
-//***************************
+//exports
 module.exports = router;
