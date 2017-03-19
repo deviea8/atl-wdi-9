@@ -12,6 +12,10 @@ var port = process.env.PORT || 3000;
 
 //app params
 app.set('view engine', 'hbs');
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(methodOverride('_method'));
 
 //controllers
 var pokemonController = require('./controllers/pokemon.js');

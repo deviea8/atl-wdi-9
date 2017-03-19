@@ -29,20 +29,33 @@ router.get('/index/:id', function(req, res) {
     pokeImg: data[req.params.id].img,
     pokeType: data[req.params.id].type,
     pokeStats: data[req.params.id].stats,
-    pokeStatsHp: data[req.params.id].stats.hp,
-    pokeStatsAttack: data[req.params.id].stats.attack
   });
 });
 
 
 // Example: a user goes to 'localhost:3000/pokemon/index/0' in the browser and data for Bulbasaur (the pokemon at index 0) will be displayed.
 
-
-
-
 // Make a GET route '/new' that will simply render a form to create a new Pokemon
 router.get('/new', function(req, res) {
-  res.send('new page');
+  res.render('new');
+});
+
+router.post('/', function(req, res) {
+  var newPokemon = {
+    name: req.body.name,
+    img: req.body.img,
+    type: [req.body.type],
+    stats: {
+      hp: req.body.hp,
+      attack: req.body.attack,
+      defense: req.body.defense,
+      spattack: req.body.spattack,
+      spdefense: req.body.spdefense,
+      speed: req.body.speed
+    }
+  };
+  data.push(newPokemon);
+  res.redirect('/pokemon');
 });
 
 
