@@ -3,9 +3,6 @@ var express = require('express');
 var router = express.Router();
 var data = require('../models/poke_array.js');
 
-
-router.use(express.static(__dirname + '/public'));
-
 //index page
 router.get('/', function(req, res) {
   res.render('index', {
