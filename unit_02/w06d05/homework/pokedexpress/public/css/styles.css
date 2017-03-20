@@ -1,20 +1,17 @@
 body {
-  background: #856363;
   font-family: 'Titillium Web', sans-serif;
   text-align: center;
 }
 
-h1 {
-  color: white;
-  text-align: center;
-  font-family: 'Days One', sans-serif;
-  text-transform: uppercase;
+.pokedex-title {
+  width: 175px;
+  height: 75px;
 }
 
 .pokemon-in-list {
   margin: 20px;
   display: inline-block;
-  border: 5px solid #FF6666;
+  border: 5px solid purple;
   width: 200px;
   padding: 3px;
   text-align: center;
@@ -41,13 +38,29 @@ a:visited {
 /* pokemon details page */
 
 .pokemon-card {
-  background: yellow;
+  border: 2px solid yellow;
+  margin: 30px
 }
 
 .pokemon-name {
-  color: blue;
+  color: gray;
 }
 
 .back-to-list {
   display: block;
+}
+
+.button-section {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.edit-button {
+  margin-left: 10px;
+}
+
+.pokemon-stats {
+  text-transform: uppercase;
 }

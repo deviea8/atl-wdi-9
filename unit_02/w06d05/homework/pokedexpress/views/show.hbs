@@ -11,13 +11,12 @@
 {{#each pokeStats}}
   <li class="pokemon-stats">{{@key}}: {{this}}</li>
 {{/each}}
-
-<form action="/pokemon/index/{{id}}?_method=DELETE" method="POST">
-  <input class="delete-button btn btn-danger" type="submit" value="Delete">
-</form>
-
-<a href="/pokemon/index/{{id}}/edit"><button class="edit-button btn btn-primary">Edit</button></a>
-
+<div class='button-section'>
+  <form action="/pokemon/index/{{id}}?_method=DELETE" method="POST">
+    <input class="delete-button btn btn-danger" type="submit" value="Delete">
+  </form>
+  <a href="/pokemon/index/{{id}}/edit"><button class="edit-button btn btn-primary">Edit</button></a>
+</div>
 <div class="back-to-list"><a href="/pokemon">Back to List of Pokémon</a>
 
 </div>
