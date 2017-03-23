@@ -31,7 +31,8 @@ router.get('/:id', authHelpers.authorize, function(req, res) {
     };
     console.log(user);
     res.render('users/show', {
-      user
+      user: user,
+      id: user._id
     });
   });
 })
@@ -47,7 +48,7 @@ router.post('/', authHelpers.createSecure, function(req, res){
   });
 
   user.save(function(err, user){
-    if (err) console.log(err);
+    if (err) {console.log(err)};
     console.log(user);
     console.log(req.session.currentUser);
     res.redirect('/users/login');
