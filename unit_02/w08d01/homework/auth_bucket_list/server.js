@@ -10,6 +10,7 @@ var mongoose = require('mongoose');
 
 var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
+var listController = require('./controllers/lists.js');
 
 // require the list controller here
 
@@ -35,7 +36,7 @@ app.use('/users', usersController);
 app.use('/sessions', sessionsController);
 
 //add the third app.use here (check readme for which route)
-
+app.use("/users/:id/lists", listController)
 
 app.listen(4000, function() {
   console.log('hey');

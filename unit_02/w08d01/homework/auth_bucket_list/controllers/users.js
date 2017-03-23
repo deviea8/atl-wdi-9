@@ -7,25 +7,32 @@ var authHelpers = require('../helpers/auth.js');
 
 //SHOW: create a GET "/" that displays all users on the index page
 router.get('/', function(req, res) {
-  User.find({})
+  User.find()
   .exec(function(err, users){
     if (err) { console.log(err); }
-    res.render('users/index.hbs', { users: users });
+    res.render('users/index', {
+      users: users
+    });
   });
 });
 
 //SIGN UP: create a GET "/signup" that simply renders the signup page
 router.get('/signup', function(req, res){
-  res.render('users/signup.hbs');
+  res.render('users/signup');
 });
 
 //SHOW: create a GET "/:id" route that shows the page ONLY IF it's the current user's session. Else, redirect to an error page that says "Oops! You are not authorized."
 router.get('/:id', authHelpers.authorize, function(req, res) {
   User.findById(req.params.id)
   .exec(function(err, user) {
-    if (err) {console.log(err)};
+    if (err) {
+      console.log(err);
+      res.send("Oops! You're not authorized.");
+    };
     console.log(user);
-    res.render('users/show.hbs', { user } );
+    res.render('users/show', {
+      user
+    });
   });
 })
 
