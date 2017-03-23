@@ -23,7 +23,7 @@ app.set("view engine", "hbs");
 app.set('views', './views');
 
 app.use(express.static('public'));
-app.use( logger('dev'));
+app.use(logger('dev'));
 
 //======================
 // CONTROLLERS
@@ -40,6 +40,17 @@ app.use('/', donutsController);
 // LISTENERS
 //======================
 //CONNECT MONGOOSE TO "donut_store"
-
+mongoose.connect('mongodb://localhost/donut_store')
 
 //CREATE THE MONGOOSE CONNECTION and SET APP TO LISTEN to 3000
+var db = mongoose.connection;
+db.on('error', function(err){
+  console.log(err)
+});
+db.once('open', function() {
+  console.log('db good to go')
+});
+
+app.listen(3000, function() {
+  console.log('server ready');
+});

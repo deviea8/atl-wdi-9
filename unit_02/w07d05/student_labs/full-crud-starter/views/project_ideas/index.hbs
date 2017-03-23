@@ -1,0 +1,16 @@
+<div>
+  <a href="/users/{{user.id}}/project-ideas">See Items</a>
+</div>
+
+<ul>
+  {{#each ideas}}
+    <li>{{this.name}}</li>
+    <div>
+      <form action="/users/{{../user.id}}/project-ideas/{{this.id}}?_method=DELETE" method="POST">
+        <input type="submit" value="Delete Item"/>
+      </form>
+    </div>
+    <br/>
+  {{/each}}
+</ul>
+

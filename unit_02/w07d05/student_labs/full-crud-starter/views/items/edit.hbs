@@ -1,0 +1,19 @@
+<h1>Edit Item</h1>
+<form action="/users/{{user.id}}/items/{{item.id}}?_method=PUT" method="POST">
+  <div>
+    <label for="description">
+      Description
+    </label>
+    <input type="text" name="description" value="{{item.description}}"/>
+  </div>
+  <div>
+    <label for="in_progress">
+      In Progress?
+    </label>
+    <span>YES<input type="radio" name="in_progress" value="true" checked /></span>
+    <span>NO<input type="radio" name="in_progress" value="false"/></span>
+  </div>
+  <div>
+    <input type="submit" value="Update Item"/>
+  </div>
+</form>

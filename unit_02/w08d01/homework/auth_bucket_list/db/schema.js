@@ -5,6 +5,10 @@ mongoose.Promise = global.Promise;
 
 //add ListSchema here
 //your code
+var ListSchema = new Schema({
+  name: String,
+  completed: Boolean
+});
 
 var UserSchema = new Schema({
   username: String,
@@ -15,9 +19,18 @@ var UserSchema = new Schema({
   updated_at: Date
 });
 
-
 //add a ListSchema.pre function (just like UserSchema below)
 //your code
+
+ListSchema.pre('save', function(next) {
+  now = new Date();
+  this.updated_at = now;
+
+  if (!this.created_at) { this.created_at = now }
+  next();
+});
+
+var ListModel = mongoose.model('List', ListSchema);
 
 UserSchema.pre('save', function(next) {
   now = new Date();
@@ -35,5 +48,6 @@ var UserModel = mongoose.model('User', UserSchema);
 
 //export List below
 module.exports = {
-  User: UserModel
+  User: UserModel,
+  List: ListModel
 };

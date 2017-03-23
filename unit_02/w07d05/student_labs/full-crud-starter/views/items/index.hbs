@@ -1,0 +1,9 @@
+<h2>{{user.first_name}}'s Items</h2>
+
+<ul>
+  {{#each user.items}}
+    <li><a href="/users/{{../user.id}}/items/{{this.id}}">{{this.description}}</a></li>
+    <br/>
+  {{/each}}
+  <a href="/users/{{user.id}}/items/new">New Item</a>
+</ul>
