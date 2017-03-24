@@ -22,15 +22,14 @@ router.post('/', function createNewBucketListItem(req, res){
         name: req.body.name,
         completed: req.body.completed
       });
-
+      var userId = req.params.id;
       user.list.push(newBucketListItem)
-
       user.save(function (err) {
         if (err) console.log(err);
         console.log(newBucketListItem);
       });
 
-      res.redirect('/users/' + req.params.id);
+      res.redirect('/users/' + userId);
     });
 });
 
