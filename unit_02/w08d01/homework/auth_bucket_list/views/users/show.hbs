@@ -1,6 +1,5 @@
 <h1>{{user.username}}'s Summer Bucket List</h1>
 <ul class="item-list">
-{{user.list}}
   {{#each user.list}}
     <li class="bucket-list-item">{{this.name}}<span class="edit-button"><button>Edit</button></span><span class="delete-button"><button>Delete</button></span></li>
   {{/each}}
