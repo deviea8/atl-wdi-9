@@ -11,7 +11,7 @@ router.get('/', function(req, res) {
   .exec(function(err, users){
     if (err) { console.log(err); }
     res.render('users/index', {
-      users: users
+      users: users,
     });
   });
 });
