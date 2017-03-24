@@ -1,5 +1,24 @@
-<h1>User Name's Summer Bucket List</h1>
-Each item in user's list
-{{user}}
+<h1>{{user.username}}'s Summer Bucket List</h1>
+<ul class="item-list">
+{{user.list}}
+  {{#each user.list}}
+    <li class="bucket-list-item">{{this.name}}<span class="edit-button"><button>Edit</button></span><span class="delete-button"><button>Delete</button></span></li>
+  {{/each}}
+</ul>
 
-<a href="/users/{{id}}/lists/new"><button class="add-list-item">Add Item</button></a>
+<h2>Add New Item</h2>
+<form action="/users/{{user._id}}/lists" method="POST">
+  <div>
+    <label for="name">name</label>
+    <input type="text" name="name">
+  </div>
+
+    <div>
+    <label for="completed">completed?</label>
+    <input type="text" name="completed">
+  </div>
+
+  <div>
+    <input type="submit" value="Add New">
+  </div>
+</form>

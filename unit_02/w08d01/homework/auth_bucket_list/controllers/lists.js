@@ -3,34 +3,46 @@
 //======================
 //require express,router,  mongoose, List schema, User schema, authHelpers
 var express = require('express');
-router = express.Router();
+var router = express.Router({mergeParams: true});
 var User = require('../models/user.js');
 var List = require('../models/list.js');
 var authHelpers = require('../helpers/auth.js');
 
 
-//New list item form page
-router.get('/:id/lists/new', function(req, res){
-  res.render('lists/new');
-});
-
 //======================
 // CREATE
 //======================
 //create a POST "/" route that saves the list item to the logged in user
+router.post('/', function createNewBucketListItem(req, res){
+  User.findById(req.params.id)
+    .exec(function (err, user){
+      if (err) { console.log(err); }
 
+      var newBucketListItem = new List ({
+        name: req.body.name,
+        completed: req.body.completed
+      });
+
+      user.list.push(newBucketListItem)
+
+      user.save(function (err) {
+        if (err) console.log(err);
+        console.log(newBucketListItem);
+      });
+
+      res.redirect('/users/' + req.params.id);
+    });
+});
 
 //======================
 // EDIT
 //======================
 //create a GET "/:id/edit" route that renders the list's edit page
-router.get('/:id/lists/edit', function(req, res){
-  User.findById(req.params.id)
+router.get('/:id/edit', function(req, res){
+  User.findById(req.params.userId)
   .exec(function(err,user){
     if(err) {console.log(err)}
-    res.render('users/edit', {
-      user:user
-    });
+    res.send('hello')
   });
 });
 
