@@ -31,7 +31,8 @@ router.get('/:id', authHelpers.authorize, function(req, res) {
     };
     console.log(user);
     res.render('users/show', {
-      user: user
+      user: user,
+      userid: user._id
     });
   });
 })
