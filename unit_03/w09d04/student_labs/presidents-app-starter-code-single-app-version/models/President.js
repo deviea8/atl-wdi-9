@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 
 var PresidentSchema = mongoose.Schema({
-	name: String,
+  name: String,
   start: Number,
-	end: Number
+  end: Number
 });
 
 module.exports = mongoose.model('President', PresidentSchema);
