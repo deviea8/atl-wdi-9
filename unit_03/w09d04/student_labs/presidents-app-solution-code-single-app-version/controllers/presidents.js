@@ -46,6 +46,10 @@ router.patch('/:id', function updateAction(req, res) {
     if(req.body.end) president.end = req.body.end;
 
     president.save(function(error) {
+<<<<<<< HEAD
+=======
+      console.log(error)
+>>>>>>> 15c7fd952a864e696511e210b0b2fbeb10978a19
       if(error) res.json({messsage: 'Could not update president b/c:' + error});
 
       res.json({message: 'President successfully updated', president: president});

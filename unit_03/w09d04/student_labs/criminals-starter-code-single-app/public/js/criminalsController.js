@@ -48,11 +48,13 @@ function CriminalsController($http){
     vm.all.splice(index, 1);
   }
 
-
-  // function editCriminal(criminal) {
-  //   var index = vm.all.indexOf(criminal);
-  //   vm.all.splice(index, 1);
-  // }
+  function editCriminal(criminal) {
+    $http
+      .put('/criminals/' + criminal._id)
+      .then(function(response) {
+        getCriminals()
+      })
+  }
 
 
 }
