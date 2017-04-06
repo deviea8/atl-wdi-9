@@ -1,0 +1,10 @@
+<h1>Infamous Criminals</h1>
+<ul class="criminals">
+	<li ng-if="$ctrl.loading">
+		<strong>Loading...</strong>
+	</li>
+
+  <li ng-repeat="criminal in $ctrl.criminals">
+    <a ui-sref="criminalsShow({ criminalId: criminal._id })" ><strong>{{criminal.name}}</strong></a>
+  </li>
+</ul>
