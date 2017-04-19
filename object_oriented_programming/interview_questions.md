@@ -12,11 +12,11 @@ Example: *class Polar Bear < Bear*
 
 - Using super
 Super checks all the way up the parent element to find the inherited method. It should be noted that using this isn't always recommended.
-Example: 
-*class B < A
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def a
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end
+Example: <br>
+*class B < A<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def a<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super<br>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end<br>
 end*
 
 - **What is the difference (in your own words) between a local variable, an 
@@ -48,6 +48,6 @@ A phrase in Ruby that says that you should treat objects based on what they can 
 The ability to get a desired result out of an interface while employing a variety of different implementations under the hood. Ultimately, the end result is not tied to a specific implementation - there is flexibility.
 
 - **What is a "base class", "sub-class", and "super class"?**
--Base class: Generic class applying to that 'level'
--Sub-class: Class that exists below that level (child element)
--Super class: Can use this to inherit from an 'ancestor'
+- Base class: Generic class applying to that 'level'
+- Sub-class: Class that exists below that level (child element)
+- Super class: Can use this to inherit from an 'ancestor'
