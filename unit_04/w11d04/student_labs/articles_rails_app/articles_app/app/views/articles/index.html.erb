@@ -1,0 +1,9 @@
+<h1>Articles</h1>
+<p>Click on each article to read comments!</p>
+<ul>
+<% @articles.each do |article| %>
+  <li>
+  <%= link_to article.title, full_article_path(article) %>
+  </li>
+<% end %>
+<ul>
