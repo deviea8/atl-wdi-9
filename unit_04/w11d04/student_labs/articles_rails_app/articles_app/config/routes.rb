@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'song/index'
+
+  get 'song/show'
+
   get 'comments/index'
 
   get 'articles' => 'articles#index'
