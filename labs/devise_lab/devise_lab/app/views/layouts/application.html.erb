@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DeviseLab</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <ul>
+    <li><%= link_to "Home", home_path %></li>
+    <li><%= link_to "Welcome", welcome_path %></li>
+    <li><%= link_to "Support", support_path %></li>
+    <li><%= link_to "Configure", configure_path %></li>
+  </ul>
+  <!-- Devise messages -->
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+    <%= yield %>
+  </body>
+</html>

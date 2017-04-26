@@ -1,0 +1,10 @@
+<div>
+  <h1>Cat Facts!</h1>
+    <img src="http://vignette2.wikia.nocookie.net/vsbattles/images/4/4c/373-emoji_android_cat_face.png/revision/latest?cb=20161224114802" height=80px>
+    <hr>
+    <ol>
+      <% @facts.each do |fact| %>
+        <li><%= fact %></li>
+      <% end %>
+    </ol>
+</div>
