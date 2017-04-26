@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # Because we aren't using UI router,
   # We use these routes to ultimately serve up Angular views
-  resources :doctors, only: [:index]
+  resources :doctors
   resources :appointments, only: [:index]
 
   root to: 'doctors#index'

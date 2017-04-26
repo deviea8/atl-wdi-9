@@ -1,0 +1,22 @@
+<div>
+  <div>
+    <form ng-submit="ctrl.addDoctor(ctrl.newDoctor)">
+      <input type="text" ng-model='ctrl.newDoctor.name' placeholder='Name'>
+      <input type="text" ng-model="ctrl.newDoctor.specialty" placeholder='Specialty'>
+      <input type="text" ng-model="ctrl.newDoctor.photo_url" placeholder='Photo URL'>
+      <input type="checkbox" ng-model="ctrl.newDoctor.accepts_insurance" placeholder='Accepts Insurance?'>
+      <br>
+      <input type="submit" value="New Doctor">
+      </form>
+  </div>
+  <div>
+    <strong>New Doctor Info:</strong>
+        <p>Name: {{ctrl.newDoctor.name}}</p>
+        <p>Specialty: {{ctrl.newDoctor.specialty }}</p>
+        <p>Accepts Insurance?: {{ctrl.newDoctor.accepts_insurance }}</p>
+        <div style="height: 150px"><img style='width: 200px ' ng-src={{ctrl.newDoctor.photo_url}}> </div><br>
+  </div>
+</div>
+
+
+

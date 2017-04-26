@@ -1,4 +1,28 @@
-<ul>
-  <li>Doctors:</li>
-  <li ng-repeat="doctor in doctorsListCtrl.doctors">{{ doctor.name }}</li>
-</ul>
+<table>
+  <thead>
+    <th></th>
+    <th>Doctor</th>
+    <th>Specialty</th>
+    <th>Accepts Insurance</th>
+    <th></th>
+  </thead>
+  <tr ng-repeat="doctor in doctorsListCtrl.doctors">
+    <td>
+      <img ng-src="{{ doctor.photo_url }}" width="120" />
+    </td>
+    <span ng-hide="doctor.isEditing"><td>{{ doctor.name }}</span>
+    <input type="text" ng-show="doctor.isEditing" ng-model='doctor.name'>
+    </td>
+    <span ng-hide="doctor.isEditing"><td>{{ doctor.specialty }}</span>
+    <input type="text" ng-show="doctor.isEditing" ng-model='doctor.specialty'>
+    </td>
+    <span ng-hide="doctor.isEditing"><td>{{ doctor.accepts_insurance }}</span>
+    <input type="checkbox" ng-show="doctor.isEditing" ng-model='doctor.accepts_insurance'>
+    <td>
+    <span ng-hide="doctor.isEditing" ng-click="doctorsListCtrl.showForm(doctor)"><button>Edit</button></span>
+    <button ng-hide="doctor.isEditing" ng-click='doctorsListCtrl.deleteDoctor(doctor)'>Delete</button>
+    <button ng-show="doctor.isEditing" ng-click='doctorsListCtrl.updateDoctor(doctor)'>Update</button>
+    </td>
+  </tr>
+</table>
+
